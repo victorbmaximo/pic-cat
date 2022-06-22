@@ -1,0 +1,39 @@
+.c-breeds {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  position: relative;
+
+  &__loading {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__items {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  &__item {
+    margin: 10px;
+  }
+
+  &__description {
+    overflow: hidden;
+    line-height: 20px;
+    max-height: 200px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  &__image {
+    height: 250px;
+    max-height: 250px;
+    object-fit: cover;
+  }
+}

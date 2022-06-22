@@ -1,0 +1,29 @@
+<section class="c-favourites">
+  <div class="c-favourites__items">
+    <ng-container *ngIf="!loading; else loadingFavourites">
+      <div
+        class="c-favourites__item"
+        *ngFor="let favourite of favourites"
+      >
+        <img
+          [src]="favourite.image.url"
+          alt="Photo of a Shiba Inu"
+          class="c-favourites__image"
+        />
+        <button
+          (click)="removeFavourite(favourite.id)"
+          mat-icon-button
+          aria-label="Remover favorito"
+          class="c-favourites__remove-btn"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #loadingFavourites>
+      <div class="c-favourites__loading">
+        <mat-spinner diameter="32"></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+</section>

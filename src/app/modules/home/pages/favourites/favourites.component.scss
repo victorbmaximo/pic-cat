@@ -1,0 +1,42 @@
+.c-favourites {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  position: relative;
+
+  &__loading {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__items {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  &__item {
+    margin: 10px;
+    position: relative;
+  }
+
+  &__image {
+    display: flex;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+      0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  }
+
+  &__remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+  }
+}

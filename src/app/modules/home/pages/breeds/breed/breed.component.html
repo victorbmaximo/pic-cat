@@ -1,0 +1,41 @@
+<section class="c-breeds">
+  <div class="c-breeds__items">
+    <ng-container *ngIf="breeds$ | async as breeds; else loadingBreeds">
+      <mat-card class="c-breeds__item" *ngFor="let breed of breeds">
+        <mat-card-header>
+          <mat-card-title>{{ breed.name }}</mat-card-title>
+          <mat-card-subtitle>{{ breed.origin }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img
+          mat-card-image
+          [src]="breed.image ? breed.image.url ? breed.image.url : 'https://via.placeholder.com/280' : 'https://via.placeholder.com/280'"
+          [alt]="breed.name"
+          class="c-breeds__image"
+        />
+
+        <mat-card-content class="c-breeds__description">
+          <p>
+            {{ breed.description }}
+          </p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <a mat-button [routerLink]="[breed.name.toLowerCase()]">Ver Mais</a>
+          <button
+            mat-icon-button
+            aria-label="Botão Favoritar"
+            (click)="saveFavourite(breed.reference_image_id)"
+          >
+            <mat-icon style="color: #cecece">favorite</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </div>
+  <ng-template #loadingBreeds>
+    <div class="c-breeds__loading">
+      <mat-spinner diameter="32"></mat-spinner>
+    </div>
+  </ng-template>
+</section>

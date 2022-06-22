@@ -1,0 +1,53 @@
+<section class="c-breed">
+  <a class="c-breed__btn-back" routerLink="inicio/gatos">
+    <mat-icon aria-hidden="false" aria-label="Arrow Back">arrow_back</mat-icon>
+    Voltar
+  </a>
+  <ng-container *ngIf="!loadingDetails; else loading">
+    <div class="c-breed__image">
+      <img
+        [src]="breedImage ? breedImage : ''"
+        alt="Photo of a Shiba Inu"
+        class="c-breed__image"
+      />
+    </div>
+
+    <mat-card class="c-breed__description">
+      <mat-card-header>
+        <mat-card-title>{{ breed ? breed.name : "" }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="c-breed__description">
+        <h3 class="c-breed__description--subtitle">Origem:</h3>
+        <p>
+          {{ breed ? breed.origin : "" }}
+        </p>
+
+        <h3 class="c-breed__description--subtitle">Descrição:</h3>
+        <p>
+          {{ breed ? breed.description : "" }}
+        </p>
+
+        <h3 class="c-breed__description--subtitle">Temperamento:</h3>
+        <p>
+          {{ breed ? breed.temperament : "" }}
+        </p>
+
+        <h3 class="c-breed__description--subtitle">Favoritar:</h3>
+        <button
+              mat-icon-button
+              aria-label="Botão favoritar"
+              (click)="saveFavourite()"
+            >
+              <mat-icon style="color: #cecece">favorite</mat-icon>
+            </button>
+
+        <h3 class="c-breed__description--subtitle">Mais informações:</h3>
+        <a mat-button [href]="breed.wikipedia_url" target="_blank">Leia Mais</a>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner diameter="32"></mat-spinner>
+  </ng-template>
+</section>

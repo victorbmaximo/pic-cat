@@ -1,0 +1,24 @@
+<nav mat-tab-nav-bar mat-align-tabs="center">
+  <a
+    mat-tab-link
+    routerLink="gatos"
+    routerLinkActive
+    #catsActive="routerLinkActive"
+    [active]="catsActive.isActive"
+  >
+    Gatos
+  </a>
+  <a
+    mat-tab-link
+    routerLink="favoritos"
+    routerLinkActive
+    #favouritesActive="routerLinkActive"
+    [active]="favouritesActive.isActive"
+  >
+    Favoritos
+  </a>
+</nav>
+
+<pic-cat-container>
+  <router-outlet></router-outlet>
+</pic-cat-container>

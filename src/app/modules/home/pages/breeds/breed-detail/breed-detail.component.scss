@@ -1,0 +1,51 @@
+.c-breed {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  position: relative;
+
+  &__btn-back {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    font-size: 12px;
+    color: #767676;
+    transition: all .2s;
+    text-decoration: none;
+
+    mat-icon {
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: #3b3b3b;
+    }
+  }
+
+  &__image {
+    width: 665px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  }
+
+  &__description {
+    margin-left: 15px;
+
+    &--subtitle {
+      color: #4050b5;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+    }
+  }
+}

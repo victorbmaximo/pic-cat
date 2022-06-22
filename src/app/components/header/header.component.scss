@@ -1,0 +1,30 @@
+.c-header {
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+
+    li {
+        margin-right: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: #ff4081;
+    }
+
+    mat-icon {
+        margin-right: 5px;
+    }
+  }
+}
